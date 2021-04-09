@@ -1,0 +1,50 @@
+{
+    "ECOMMON": {
+        "en":"Something went wrong",
+        "ru":"Что-то пошло не так"
+    },
+    "ENOTFOUND": {
+        "en":"Student not found",
+        "ru":"Студент не найден"
+    },
+    "EMISSPARAM": {
+        "en":"Parameter was missed",
+        "ru":"Данные пользователя не могут быть пустыми"
+    },
+    "EWRONGPARAM": {
+        "en":"Wrong type of parameter",
+        "ru":"Неправильный тип параметра"
+    },
+    "ETYPE": {
+        "en":"Must be a string type",
+        "ru":"Данные пользователя должны быть строкой"
+    },
+    "ELENGTH": {
+        "en":"Fio must be at least 3 symbols",
+        "ru":"Минимальная длина данных 3 символа"
+    },
+    "EDATE": {
+        "en":"Birthday must be a date",
+        "ru":"День рождения пользователя должен содержать только дату"
+    },
+    "EDATELIMIT": {
+        "en": "The birthday cannot be greater than now",
+        "ru": "День рождения пользователя должен быть больше текущей даты"
+    },
+    "EWRONGGRADE": {
+        "en": "The grade is wrong",
+        "ru": "Такой оценки не существует"
+    },
+    "ENOTNUMBER": {
+        "en": "Parameter must be a number",
+        "ru": "Параметры должны содержать только числа"
+    },
+    "EWRONGCOLUMN": {
+        "en": "Wrong student column",
+        "ru": "Неверный параметр студента"
+    },
+    "EWRONGORDER": {
+        "en": "Order type must be ASC or DESC",
+        "ru": "Тип сортировки должен быть ASC или DESC"
+    }
+}

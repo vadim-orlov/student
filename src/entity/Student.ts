@@ -7,7 +7,6 @@ export enum StudentGrade {
     GOOD = "хорошо",
     EXCELLENT="отлично"
 }
-
 @Entity()
 export class Student {
 
@@ -26,6 +25,4 @@ export class Student {
         enum: StudentGrade
     })
     grade: StudentGrade;
-
-
 }
