@@ -1,6 +1,6 @@
 import {Request, Response } from "express";
 import { getRepository } from "typeorm";
-import {Student} from '../entity/Student'
+import {Student, StudentGrade} from '../entity/Student'
 import { validationResult } from 'express-validator';
 import * as CustomErrors from '../helpers/errors.json'
 import { iStudent,ReqQuery } from '../helpers/types'
@@ -42,16 +42,26 @@ class StudentController {
 
                 let { column, orderBy, limit, offset} = req.query;
 
-                const result = await getRepository(Student)
-                .createQueryBuilder('Student')
-                .orderBy(column, orderBy)
-                .skip(offset)
-                .take(limit)
-                .getMany();
+                const  [result, total] = await getRepository(Student)
+                .findAndCount(
+                    {
+                        order: { [column]: orderBy },
+                        take: limit,
+                        skip: offset
+                    }
+                );
 
                 return res.status(200).json({
                     success:true,
-                    body: result
+                    body: {
+                        total,
+                        result,
+                        settings:{
+                            filterColumns:["id", "fio","birthday","grade"],
+                            filterDirection:["ASC", "DESC"],
+                            gradeTypes: StudentGrade
+                        }
+                    }
                 })
             } catch (error) {
                 console.log(error);

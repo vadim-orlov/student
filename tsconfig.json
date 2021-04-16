@@ -1,4 +1,7 @@
 {
+   "exclude": [
+      "**/*.spec.ts"
+   ],
    "compilerOptions": {
       "lib": [
          "es6"
@@ -12,4 +15,5 @@
       "resolveJsonModule": true,
       "sourceMap": true
    }
+  
 }

@@ -42,9 +42,35 @@ const router = Router();
 *           description: The response status
 *           example: true
 *         body:
-*           type: array
-*           items:
-*             $ref: '#/components/schemas/Student'
+*           type: object
+*           properties:
+*             total:
+*               type: integer
+*               description: Total count of students
+*               example: 120
+*             result:
+*               type: array
+*               items:
+*                  $ref: '#/components/schemas/Student'
+*             settings:
+*               type: object
+*               properties:
+*                 filterColumns:
+*                   type: array
+*                   items:
+*                     type: string
+*                     description: List of columns for filtering
+*                     example: fio
+*                 filterDirection:
+*                   type: array
+*                   items:
+*                     type: string
+*                     description: Filter direction
+*                     example: ASC
+*                 gradeTypes:
+*                   type: string
+*                   description: List of grades
+*                   enum: [неудовлетворительно, удовлетворительно,хорошо,отлично]
 *     SuccessResponseSingle:
 *       type: object
 *       properties:
@@ -312,5 +338,9 @@ router.put('/:id', [...idValidation, ...studentValidation],StudentController.upd
  *                  - $ref: '#/components/schemas/ErrorResponseArray'      
 */
 router.delete('/:id',idValidation, StudentController.deleteStudent)
+
+
+
+router.get('/grade',)
 
 export default router
